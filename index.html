@@ -1,12 +1,34 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="src/style.css" />
     <title>Doctors Aid</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@700&family=Sniglet:wght@400;800&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
+    <div id="welcomeEl" class="row col-sm-12 col-md-6 col-lg-4"></div>
+
+    <div id="backgroundStyle" class="rounded-circle mt-5">
+      <div id="doktor" class="rounded-circle"></div>
+    </div>
+
+    <p id="drLisa" class="mt-5"></p>
+
+    <div id="bubbleBtn" class="hide">
+      <p id="bubbleP">Do you want to learn about a common cold?</p>
+      <button id="lessonBtn">Let's learn!</button>
+    </div>
     <div id="app"></div>
     <script type="module" src="/src/main.ts"></script>
   </body>

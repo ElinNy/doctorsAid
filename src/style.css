@@ -1,0 +1,119 @@
+body {
+  background-color: bisque;
+}
+#doktor {
+  width: 40vw;
+  height: 40vh;
+  border: 2 px solid black;
+  background-image: url("/doktor_doktor.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: -90px auto;
+  /* border: 2px solid black; */
+}
+
+#backgroundStyle {
+  border: 4px double #007bffa2;
+  width: fit-content;
+  height: fit-content;
+  background-color: #7fffd4;
+  border-radius: 100%;
+  margin: 0px auto 6rem;
+}
+#bubbleBtn {
+  background-image: url("/SVG/pratbubbla.svg");
+  background-repeat: no-repeat;
+  width: 20rem;
+  height: 20rem;
+  /* display: flex; */
+  padding: 0%;
+  margin: auto;
+  text-align: center;
+}
+
+#lessonBtn {
+  margin: auto;
+  background-color: #007bffa2;
+  position: relative;
+  right: -3rem;
+  bottom: -6rem;
+  border-radius: 10%;
+  border: solid aquamarine 1px;
+  box-shadow: 0.2rem 0.2rem 0.2rem #007bffa2;
+  font-family: "Sniglet", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 20px;
+}
+
+#bubbleP {
+  text-align: center;
+  position: relative;
+  top: 4rem;
+  left: -0.5rem;
+  font-size: 20px;
+  font-family: "Sniglet", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+#drLisa {
+  text-align: center;
+  color: rgba(0, 123, 255, 0.637);
+  font-family: "Sniglet", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 20px;
+  animation: fadeIn 2s ease-in forwards;
+}
+#welcomeEl {
+  margin: 4rem auto 0px;
+  height: 100px;
+  width: 300px;
+  position: relative;
+  animation: effect linear infinite;
+}
+
+.hide {
+  display: none;
+}
+
+@keyframes effect {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+span {
+  position: absolute;
+  text-transform: capitalize;
+  color: rgba(0, 123, 255, 0.637);
+  font-size: 20px;
+  font-family: "Sniglet", system-ui;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 30px;
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #welcomeEl {
+    margin: 4rem auto 0px;
+    height: 100px;
+    width: 300px;
+  }
+  span {
+    font-size: 16px;
+  }
+}
