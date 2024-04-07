@@ -1,5 +1,5 @@
 body {
-  background-color: bisque;
+  background-color: #faecda;
 }
 #doktor {
   width: 40vw;
@@ -10,7 +10,6 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   margin: -90px auto;
-  /* border: 2px solid black; */
 }
 
 #backgroundStyle {
@@ -23,21 +22,21 @@ body {
 }
 #bubbleBtn {
   background-image: url("/SVG/pratbubbla.svg");
+  position: relative;
   background-repeat: no-repeat;
-  width: 20rem;
-  height: 20rem;
-  /* display: flex; */
+  width: 15rem;
+  height: 15rem;
   padding: 0%;
-  margin: auto;
+  margin: 3rem auto 0px;
   text-align: center;
+  top: 4rem;
 }
 
 #lessonBtn {
-  margin: auto;
   background-color: #007bffa2;
   position: relative;
-  right: -3rem;
-  bottom: -6rem;
+  right: -1rem;
+  bottom: -3rem;
   border-radius: 10%;
   border: solid aquamarine 1px;
   box-shadow: 0.2rem 0.2rem 0.2rem #007bffa2;
@@ -47,17 +46,58 @@ body {
   font-size: 20px;
 }
 
+#backgroundFlowersRound {
+  background-image: url(/public/SVG/Rityta\ 1.svg);
+  width: 40rem;
+  height: 40rem;
+  border-radius: 100%;
+  margin: auto;
+  background-size: contain;
+  border: double 20px aquamarine;
+}
+
 #bubbleP {
-  text-align: center;
+  padding: 1rem;
   position: relative;
-  top: 4rem;
-  left: -0.5rem;
-  font-size: 20px;
+  top: 3rem;
+  left: -0.3rem;
+  font-size: 15px;
   font-family: "Sniglet", system-ui;
   font-weight: 400;
   font-style: normal;
 }
+#talkingId {
+  position: relative;
+  top: 3rem;
+  background-image: url("/doktor_teeth.png");
+  background-size: contain;
+  height: 15rem;
+  width: 20rem;
+  background-repeat: no-repeat;
+  margin: auto;
+}
 
+.talking {
+  animation: talking-animation 1.5s infinite;
+}
+
+@keyframes talking-animation {
+  0% {
+    background-image: url(/doktor_smile.png);
+  }
+  25% {
+    background-image: url(/doktor_open.png);
+  }
+  50% {
+    background-image: url(/doktor_smile.png);
+  }
+  75% {
+    background-image: url(/doktor_open.png);
+  }
+  100% {
+    background-image: url(/doktor_smile.png);
+  }
+}
 #drLisa {
   text-align: center;
   color: rgba(0, 123, 255, 0.637);
@@ -116,4 +156,70 @@ span {
   span {
     font-size: 16px;
   }
+}
+
+/* Slideshow container */
+.slideshow-container {
+  width: 80%;
+  height: 30rem;
+  position: relative;
+  margin: -5rem auto;
+  background-image: url("/public/SVG/backgroundFlowers.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* Next & previous buttons */
+.prev {
+  bottom: 15rem;
+  margin: 0px 0px 0px 2rem;
+  padding: 16px;
+  left: 10px;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0);
+  background-image: url(/SVG/left.svg);
+  background-repeat: no-repeat;
+  border: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  bottom: 15rem;
+  margin: 0px 2rem 0px 0px;
+  padding: 16px;
+  right: 10px;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0);
+  background-image: url(/SVG/rigth.svg);
+  background-repeat: no-repeat;
+  border: none;
+  /* border-radius: 3px 0 0 3px; */
+}
+
+#slideText {
+  background-color: #faecdaba;
+  position: relative;
+  top: 5rem;
+  height: fit-content;
+  width: 80%;
+  margin: auto;
+  text-align: center;
+}
+
+#slideH1 {
+  font-size: large;
+}
+
+#slideImg {
+  border: solid 1px aquamarine;
+  width: 10rem;
+  height: 10rem;
+  /* background-image: url("/doktor_teeth.png"); */
+  border-radius: 100%;
+  background-color: #7fffd4;
+}
+#slideImgContainer {
+  width: 10rem;
+  height: 10rem;
+  margin: auto;
 }

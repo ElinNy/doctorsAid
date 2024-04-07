@@ -19,15 +19,31 @@
   <body>
     <div id="welcomeEl" class="row col-sm-12 col-md-6 col-lg-4"></div>
 
-    <div id="backgroundStyle" class="rounded-circle mt-5">
+    <div id="backgroundStyle" class="rounded-circle mt-5 hide">
       <div id="doktor" class="rounded-circle"></div>
     </div>
 
     <p id="drLisa" class="mt-5"></p>
 
-    <div id="bubbleBtn" class="hide">
-      <p id="bubbleP">Do you want to learn about a common cold?</p>
-      <button id="lessonBtn">Let's learn!</button>
+    <div id="backgroundFlowersRound" class="hide">
+      <div id="bubbleBtn">
+        <div id="bubbleP"></div>
+        <button id="lessonBtn" class="hide">Let's learn!</button>
+      </div>
+      <div id="talkingId" class="talking hide"></div>
+    </div>
+
+    <div class="slideshow-container" style="border: 1px solid black">
+      <div class="numbertext">1</div>
+      <div id="slideImgContainer">
+      <img id="slideImg"></img>
+    </div>
+      <!-- <img src="/SVG/backgroundFlowers.svg" style="width: 100%; height: auto" /> -->
+      <button class="prev"></button>
+      <button class="next"></button>
+      <div id="slideText" style="border: 1px solid black">
+        <h1 id="slideH1"></h1>
+      </div>
     </div>
     <div id="app"></div>
     <script type="module" src="/src/main.ts"></script>
