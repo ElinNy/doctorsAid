@@ -1,6 +1,7 @@
 const firstSlide = document.querySelector("#slideText");
 const firstSlideH1 = document.getElementById("slideH1");
 const firstSlideImg = document.getElementById("slideImg");
+const firstSlideNumber = document.querySelector(".numbertext");
 const prev = document.querySelector(".prev");
 const next = document.querySelector(".next");
 let currentIndex = 0;
@@ -43,11 +44,12 @@ const imgArray = [
 ];
 
 export function exportSlide() {
-  showSlide(1);
+  showSlide(currentIndex);
   function showSlide(index: number) {
     console.log(h1Array[index]);
     firstSlide!.textContent = textArray[index];
     firstSlideH1!.textContent = h1Array[index];
+    firstSlideNumber!.textContent = `${currentIndex + 1}`;
     firstSlideImg!.setAttribute("src", imgArray[index]);
   }
 

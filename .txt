@@ -1,0 +1,28 @@
+Lägger in anteckningar från mobilen som jag skrev innan jag startade här: 
+
+Jag får en bild av att jag vill ha bokstäver som dyker upp efterhand som säger välkommen till Doktor [namn].
+En animation med en läkare som pratar (Göra animation med svg). 
+En knapp som leder till en slideshow som fungerar som lektioner. 
+(en box, eller typ card där innehållet byts ut). 
+Efter slideshowen, lägga in en knapp som leder till ett memoryspel som innehåller det som gicks igenom i lektionerna.
+Pastelliga glada färger, simpel design. 
+Skriven i Typescript
+
+Nu har det gått ca 12 timmar (plussa på kanske 2-4 timmar)
+
+Nu har jag gjort en "välkomstskylt" och en slideshow med lite "lektioner"
+Jag ska fortsätta göra ett memory, så kommer lägga ner mer tid på detta projektet, för jag tycker det är så otroligt roligt. 
+Säkert pilla vidare med CSS, ändra fäger kanske osv. 
+
+1. Det svåraste tycker jag är att börja. Att sätta upp projektet och bestämma vilken funktionalitet jag bör börja med. Så i detta projektet har jag gått i en linjär proccess från början till slut. 
+    Sen kan jag tycka det är svårt att inte bli distraherad med CSS pill också och att det kan bli lite stökigt när det kommer till CSS filen. (Men det är roligt!)
+
+2. Tyckte det var roligt att göra doktorn som pratar och sen skrivsmaskin effekten. Tänkte göra en animation men insåg att jag behöver nog gå lite fler kurser än korta youtubeklipp för det!
+    Men det var kul att använda mig av svg bilder och med css animera dem för en "prat-effekt" 
+    Men sen tycker jag det är roligt att lista ut saker, om än att dem är simpla och kanske bara att jag listar ut att det ligger på fel plats och inte körs. 
+
+3. Jag har fått lite mer förståelse för vissa css regler. Verkligen fått övat på att positionera boxar 😅 
+    Även insett att jag behöver jobba på hur jag lägger upp arbetet för projekt. Kanske inte så tydlig lära, men tänkte att jag kunde lägga in det också. 
+
+4. Om jag hade mer tid, så skulle jag gjort en ännu mer interaktiv sida med en meny, kanske med "kurser". Och så flera småspel som användaren hade kunnat spela. 
+    Sen hade jag velat ha mer animationer med en vinkande doktor och kanske att doktorn pekar på knapparna för att göra det roligare för barn som är användarna i detta fallet. 

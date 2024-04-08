@@ -6,11 +6,11 @@ import {
   letsLearnBtn,
 } from "./welcomeFunctions";
 
-// welcome();
+welcome();
 
-// hideWelcomeAndAddSpeechBubble();
+hideWelcomeAndAddSpeechBubble();
 
-// speechBubbleTimingandAddingBtn();
+speechBubbleTimingandAddingBtn();
 
-// letsLearnBtn();
+letsLearnBtn();
 exportSlide();

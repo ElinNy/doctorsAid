@@ -10,6 +10,7 @@ const lessonBtn = document.querySelector<HTMLButtonElement>("#lessonBtn");
 const backgroundFlowersRound = document.querySelector(
   "#backgroundFlowersRound"
 );
+const slideshowContainer = document.querySelector(".slideshow-container");
 
 bubbleBtn?.classList.add("hide");
 
@@ -90,5 +91,6 @@ export function letsLearnBtn() {
     bubbleBtn?.classList.add("hide");
     talkingId?.classList.add("hide");
     backgroundFlowersRound?.classList.add("hide");
+    slideshowContainer?.classList.remove("hide");
   });
 }
