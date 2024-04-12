@@ -27,13 +27,9 @@ export function exportMemory() {
   memoryCards.forEach((card) => {
     const cardElement = document.createElement("div");
     cardElement.classList.add("memory-card");
-    // cardElement.textContent = card.isFlipped ? card.value : "";
     cardElement.addEventListener("click", () => flipCard(card, cardElement));
     memoryBoard.appendChild(cardElement);
   });
-
-  let firstCard: MemoryCard | null = null;
-  let secondCard: MemoryCard | null = null;
 
   function flipCard(card: MemoryCard, cardElement: HTMLDivElement) {
     cardElement.textContent = card.value;
