@@ -2,8 +2,11 @@ const firstSlide = document.querySelector("#slideText");
 const firstSlideH1 = document.getElementById("slideH1");
 const firstSlideImg = document.getElementById("slideImg");
 const firstSlideNumber = document.querySelector(".numbertext");
+const slideShow = document.querySelector(".slideshow-container");
+const memory = document.querySelector(".memoryBoard");
 const prev = document.querySelector(".prev");
 const next = document.querySelector(".next");
+const play = document.querySelector("#play");
 let currentIndex = 0;
 
 const h1Array = [
@@ -56,11 +59,21 @@ export function exportSlide() {
   function nextSlide() {
     currentIndex = (currentIndex + 1) % imgArray.length;
     showSlide(currentIndex);
+    if (currentIndex === 9) {
+      play?.classList.remove("hide");
+    } else {
+      play?.classList.add("hide");
+    }
   }
 
   function prevSlide() {
     currentIndex = (currentIndex - 1 + imgArray.length) % imgArray.length;
     showSlide(currentIndex);
+    if (currentIndex === 9) {
+      play?.classList.remove("hide");
+    } else {
+      play?.classList.add("hide");
+    }
   }
   prev?.addEventListener("click", () => {
     prevSlide();
@@ -69,5 +82,10 @@ export function exportSlide() {
   next?.addEventListener("click", () => {
     nextSlide();
     showSlide(currentIndex);
+  });
+
+  play?.addEventListener("click", () => {
+    slideShow?.classList.add("hide");
+    memory?.classList.remove("hide");
   });
 }

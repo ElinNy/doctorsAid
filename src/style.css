@@ -44,14 +44,16 @@ body {
   font-weight: 400;
   font-style: normal;
   font-size: 20px;
+  animation: fadeIn 1s ease-in forwards;
 }
 
 #backgroundFlowersRound {
   background-image: url(/SVG/Rityta\ 1.svg);
   width: 20rem;
   height: 30rem;
-  border-radius: 30%;
+  border-radius: 50%;
   margin: auto;
+  margin-top: 3rem;
   background-size: cover;
   border: double 10px aquamarine;
 }
@@ -115,10 +117,6 @@ body {
   animation: effect linear infinite;
 }
 
-.hide {
-  display: none;
-}
-
 @keyframes effect {
   100% {
     transform: rotate(360deg);
@@ -161,10 +159,10 @@ span {
 /* Slideshow container */
 .slideshow-container {
   width: 80%;
-  height: 30rem;
+  height: 35rem;
   position: relative;
   /* margin: -5rem auto; */
-  margin: 3rem auto;
+  margin: 1rem auto;
   background-image: url("/SVG/backgroundFlowers.svg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -173,7 +171,7 @@ span {
 
 /* Next & previous buttons */
 .prev {
-  bottom: 15rem;
+  bottom: 18rem;
   margin: 0px 0px 0px 2rem;
   padding: 16px;
   left: 10px;
@@ -186,7 +184,7 @@ span {
 
 /* Position the "next button" to the right */
 .next {
-  bottom: 15rem;
+  bottom: 18rem;
   margin: 0px 2rem 0px 0px;
   padding: 16px;
   right: 10px;
@@ -244,5 +242,48 @@ span {
   font-size: 20px;
   font-family: "Sniglet", system-ui;
   font-weight: 600;
-  font-style: normal;
+}
+#play {
+  position: absolute;
+  width: 5rem;
+  right: 10px;
+  bottom: 10px;
+  background-color: #faecdaba;
+  color: rgba(0, 0, 0, 0.458);
+  font-size: 20px;
+  font-family: "Sniglet", system-ui;
+  font-weight: 400;
+  border: double 4px rgba(0, 0, 0, 0.458);
+  margin-top: 1rem;
+  animation: fadeIn 1s ease-in forwards;
+}
+
+.memory-card {
+  width: 100px;
+  height: 100px;
+  background-color: #588151b0;
+  border: double 4px rgba(0, 0, 0, 0.458);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  cursor: pointer;
+  margin: 5px auto;
+  background-image: url("/SVG/backgroundFlowers.svg");
+  background-position: center;
+  background-size: cover;
+}
+.memoryBoard {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 5px;
+  margin: 20px auto;
+  padding: 20px;
+  width: 420px;
+  border: double 4px rgba(0, 0, 0, 0.458);
+  background-color: rgba(255, 166, 0, 0.216);
+}
+
+.hide {
+  display: none;
 }

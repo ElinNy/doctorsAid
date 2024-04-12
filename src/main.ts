@@ -1,3 +1,4 @@
+import { exportMemory } from "./memory";
 import { exportSlide } from "./slideShow";
 import {
   welcome,
@@ -6,11 +7,13 @@ import {
   letsLearnBtn,
 } from "./welcomeFunctions";
 
-welcome();
+/* welcome();
 
 hideWelcomeAndAddSpeechBubble();
 
 speechBubbleTimingandAddingBtn();
 
 letsLearnBtn();
-exportSlide();
+exportSlide(); */
+
+exportMemory();
