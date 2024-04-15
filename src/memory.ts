@@ -5,6 +5,7 @@ interface MemoryCard {
   value: string;
   image: string;
   isFlipped: boolean;
+  element?: HTMLDivElement;
 }
 const memoryCards: MemoryCard[] = [
   { id: 1, value: "A", image: "/love.png", isFlipped: false },
@@ -27,13 +28,53 @@ export function exportMemory() {
   memoryCards.forEach((card) => {
     const cardElement = document.createElement("div");
     cardElement.classList.add("memory-card");
-    cardElement.addEventListener("click", () => flipCard(card, cardElement));
+    cardElement.addEventListener("click", () => handleClickedCard(card));
+    card.element = cardElement;
     memoryBoard.appendChild(cardElement);
   });
 
-  function flipCard(card: MemoryCard, cardElement: HTMLDivElement) {
-    cardElement.textContent = card.value;
-    cardElement.style.backgroundImage = `url(${card.image})`;
+  function handleClickedCard(clickedCard: MemoryCard): void {
+    console.log("klickat kort", clickedCard);
+    if (!clickedCard.isFlipped) {
+      flipCard(clickedCard);
+      let flippedCards = memoryCards.filter((card) => card.isFlipped);
+      console.log("Vända kort:", flippedCards);
+      if (flippedCards.length === 2) {
+        const [card1, card2] = flippedCards;
+        if (card1.value === card2.value) {
+          console.log("match!");
+          flippedCards = [];
+          setTimeout(() => {
+            handleClickedCard(clickedCard);
+          }, 1000);
+        } else {
+          console.log("no match");
+          setTimeout(() => {
+            flipCard(card1);
+            flipCard(card2);
+          }, 1000);
+        }
+      }
+    }
+  }
+
+  function flipCard(card: MemoryCard): void {
+    card.isFlipped = !card.isFlipped;
+    if (card.element) {
+      card.element.style.backgroundImage = card.isFlipped
+        ? `url(${card.image})`
+        : `url("/SVG/backgroundFlowers.svg")`;
+    }
     console.log(card, card.image);
   }
 }
+
+function shuffleArray(memoryCards: MemoryCard[]) {
+  for (let i = memoryCards.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [memoryCards[i], memoryCards[j]] = [memoryCards[j], memoryCards[i]];
+  }
+}
+shuffleArray(memoryCards);
+
+console.log(memoryCards);
