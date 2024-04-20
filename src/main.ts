@@ -7,13 +7,13 @@ import {
   letsLearnBtn,
 } from "./welcomeFunctions";
 
-/* welcome();
+welcome();
 
 hideWelcomeAndAddSpeechBubble();
 
 speechBubbleTimingandAddingBtn();
 
 letsLearnBtn();
-exportSlide(); */
+exportSlide();
 
 exportMemory();
