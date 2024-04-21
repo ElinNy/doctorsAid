@@ -134,10 +134,8 @@ span {
   position: absolute;
   text-transform: capitalize;
   color: rgba(0, 123, 255, 0.637);
-  font-size: 20px;
   font-family: "Sniglet", system-ui;
-  font-weight: 600;
-  font-style: normal;
+  font-weight: 500;
   font-size: 30px;
   opacity: 0;
   animation: fadeIn 1s ease-in-out forwards;
@@ -149,17 +147,6 @@ span {
   }
   100% {
     opacity: 1;
-  }
-}
-
-@media only screen and (max-width: 600px) {
-  #welcomeEl {
-    margin: 4rem auto 0px;
-    height: 100px;
-    width: 300px;
-  }
-  span {
-    font-size: 16px;
   }
 }
 
@@ -356,7 +343,7 @@ span {
   color: rgba(0, 0, 0, 0.458);
   font-size: 25px;
   font-family: "Sniglet", system-ui;
-  font-weight: 600;
+  font-weight: 500;
   text-decoration: underline;
 }
 
