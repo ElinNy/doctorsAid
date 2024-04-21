@@ -1,3 +1,5 @@
+import { exportMemory } from "./memory";
+
 const firstSlide = document.querySelector("#slideText");
 const firstSlideH1 = document.getElementById("slideH1");
 const firstSlideImg = document.getElementById("slideImg");
@@ -87,5 +89,6 @@ export function exportSlide() {
   play?.addEventListener("click", () => {
     slideShow?.classList.add("hide");
     memory?.classList.remove("hide");
+    exportMemory();
   });
 }

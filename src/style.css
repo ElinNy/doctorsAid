@@ -29,7 +29,8 @@ body {
   width: 10rem;
   /* width: fit-content; */
   /* height: fit-content; */
-  /* height: 10rem; */
+  height: 12rem;
+  width: 12rem;
   /* height: auto; */
   padding: 30px 0px;
   margin: 3rem auto 0px;
@@ -38,16 +39,19 @@ body {
   background-color: #7fffd4;
   border-radius: 50px 50px 0px 50px;
   margin: 20px;
-  border: #007bffa2 double 4px;
+  border: double 4px rgba(0, 0, 0, 0.458);
 }
 
 #lessonBtn {
+  color: rgba(0, 0, 0, 0.458);
   background-color: #007bffa2;
-  position: relative;
+  position: absolute;
   margin-top: 20px;
-  left: 4rem;
+  left: 3rem;
+  top: 7rem;
+  width: 8rem;
   border-radius: 10%;
-  border: solid aquamarine 1px;
+  border: double 4px rgba(0, 0, 0, 0.458);
   box-shadow: 0.2rem 0.2rem 0.2rem #007bffa2;
   font-family: "Sniglet", system-ui;
   font-weight: 400;
@@ -57,18 +61,20 @@ body {
 }
 
 #backgroundFlowersRound {
+  position: relative;
   background-image: url(/SVG/Rityta\ 1.svg);
   width: 20rem;
-  height: 30rem;
-  border-radius: 50%;
+  height: 23rem;
+  border-radius: 20%;
   margin: auto;
   margin-top: 3rem;
   background-size: cover;
-  border: double 10px aquamarine;
+  border: double 4px rgba(0, 0, 0, 0.458);
 }
 
 #bubbleP {
-  position: relative;
+  color: rgba(0, 0, 0, 0.458);
+  position: absolute;
   /* top: 3rem; */
   /* left: -0.3rem; */
   font-size: 20px;
@@ -77,15 +83,15 @@ body {
   font-style: normal;
 }
 #talkingId {
-  position: relative;
-  left: 1rem;
+  position: absolute;
+  left: 7rem;
   /* top: 3rem; */
   background-image: url("/doktor_teeth.png");
   background-size: contain;
   height: 10rem;
-  /* width: 20rem; */
+  width: 15rem;
   background-repeat: no-repeat;
-  margin: auto;
+  /* margin: auto; */
 }
 
 .talking {
@@ -217,7 +223,7 @@ span {
   margin: auto;
   text-align: center;
   color: rgba(0, 0, 0, 0.63);
-  font-size: 15px;
+  font-size: 18px;
   font-family: "Sniglet", system-ui;
   font-weight: 400;
   font-style: normal;
@@ -270,7 +276,8 @@ span {
 .memory-card {
   width: 100px;
   height: 100px;
-  background-color: #588151b0;
+  /* background-color: #588151b0; */
+  background-color: rgba(127, 255, 212, 0.403);
   border: double 4px rgba(0, 0, 0, 0.458);
   display: flex;
   justify-content: center;
@@ -280,7 +287,8 @@ span {
   margin: 5px auto;
   background-image: url("/SVG/backgroundFlowers.svg");
   background-position: center;
-  background-size: cover;
+  background-size: contain;
+  border-radius: 50%;
 }
 
 .flip-card {
@@ -295,18 +303,81 @@ span {
   padding: 20px;
   width: 420px;
   border: double 4px rgba(0, 0, 0, 0.458);
-  background-color: rgba(255, 166, 0, 0.216);
+  background-color: rgba(255, 166, 0, 0.075);
+  border-radius: 10%;
+}
+
+#playAgain {
+  position: relative;
+  border: double 4px rgba(0, 0, 0, 0.458);
+  border-radius: 20%;
+  width: 20rem;
+  height: 20rem;
+  margin: auto;
+  text-align: center;
+  padding: 20px;
+  animation: fadeIn 1s ease-in forwards;
+  background-image: url(/SVG/Rityta\ 1.svg);
+  background-size: cover;
+  margin-top: 2rem;
+}
+#playAgainBtn {
+  position: absolute;
+  width: 8rem;
+  right: 1.8rem;
+  border-radius: 10px;
+  background-color: #faecdaba;
+  color: rgba(0, 0, 0, 0.458);
+  font-size: 20px;
+  font-family: "Sniglet", system-ui;
+  font-weight: 400;
+  border: double 4px rgba(0, 0, 0, 0.458);
+  margin-top: 4px;
+
+  animation: fadeIn 1s ease-in forwards;
+}
+
+#playAgainP {
+  text-align: center;
+  color: rgba(0, 0, 0, 0.458);
+  font-size: 18px;
+  font-family: "Sniglet", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+#talkingPlayAgainId {
+  background-image: url("/doktor_teeth.png");
+  background-size: cover;
+  background-position: center;
+  width: 7rem;
+  height: 7rem;
+  background-repeat: no-repeat;
+  margin: 0 auto;
+  float: right;
+}
+
+#textPlayAgainBackground {
+  position: relative;
+  background-color: #7fffd4;
+  border-radius: 20%;
+  height: 12rem;
+  width: 12rem;
+  padding: 20px 0px;
+  margin: auto;
+  border: double 4px rgba(0, 0, 0, 0.458);
+  /* text-align: center; */
+}
+
+#goodJob {
+  position: relative;
+  color: rgba(0, 0, 0, 0.458);
+  font-size: 25px;
+  font-family: "Sniglet", system-ui;
+  font-weight: 600;
+  /* font-style: normal; */
+  text-decoration: underline;
 }
 
 .hide {
   display: none;
-}
-
-#playAgain {
-  border: double 4px rgba(0, 0, 0, 0.458);
-  height: 10rem;
-  text-align: center;
-}
-#playAgainBtn {
-  border: double 4px rgba(0, 0, 0, 0.458);
 }

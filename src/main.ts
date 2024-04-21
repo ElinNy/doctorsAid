@@ -1,4 +1,3 @@
-import { exportMemory } from "./memory";
 import { exportSlide } from "./slideShow";
 import {
   welcome,
@@ -15,5 +14,3 @@ speechBubbleTimingandAddingBtn();
 
 letsLearnBtn();
 exportSlide();
-
-exportMemory();

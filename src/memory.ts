@@ -1,3 +1,5 @@
+import { playAgainFunction } from "./playAgain";
+
 interface MemoryCard {
   id: number;
   value: string;
@@ -6,7 +8,7 @@ interface MemoryCard {
   isMatched: boolean;
   element?: HTMLDivElement;
 }
-const memoryCards: MemoryCard[] = [
+export const memoryCards: MemoryCard[] = [
   { id: 1, value: "A", image: "/love.png", isFlipped: false, isMatched: false },
   { id: 2, value: "A", image: "/love.png", isFlipped: false, isMatched: false },
   {
@@ -69,7 +71,7 @@ const memoryCards: MemoryCard[] = [
   },
 ];
 
-function shuffleArray<T>(array: T[]): T[] {
+export function shuffleArray<T>(array: T[]): T[] {
   for (let i = array.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
     [array[i], array[j]] = [array[j], array[i]];
@@ -77,14 +79,71 @@ function shuffleArray<T>(array: T[]): T[] {
   return array;
 }
 
-shuffleArray(memoryCards);
-
 const memoryBoard = document.querySelector(".memoryBoard") as HTMLDivElement;
 let flippedCards: MemoryCard[] = [];
 let cardElement: HTMLDivElement;
 let matchedCount = 0;
 
+function handleClickedCard(clickedCard: MemoryCard): void {
+  if (!clickedCard.isFlipped && flippedCards.length < 2) {
+    flipCard(clickedCard);
+    flippedCards.push(clickedCard);
+
+    if (flippedCards.length === 2) {
+      const [card1, card2] = flippedCards;
+
+      if (card1.id !== card2.id && card1.value === card2.value) {
+        matchedCount++;
+        console.log(matchedCount);
+        // let cardNodes: Node[] = [];
+        if (matchedCount === 6) {
+          setTimeout(() => {
+            memoryBoard.classList.add("hide");
+            const playAgain = document.querySelector("#playAgain");
+            playAgain?.classList.remove("hide");
+            playAgainFunction();
+          }, 2000);
+        }
+        setTimeout(() => {
+          card1.isMatched = true;
+          card2.isMatched = true;
+          card1.element!.style.backgroundImage = `url("/SVG/star.svg")`;
+          card2.element!.style.backgroundImage = `url("/SVG/star.svg")`;
+          card1.element!.removeEventListener("click", () =>
+            handleClickedCard(card1)
+          );
+          card2.element!.removeEventListener("click", () =>
+            handleClickedCard(card2)
+          );
+
+          flippedCards = [];
+        }, 1000);
+      } else {
+        setTimeout(() => {
+          flipCard(card1);
+          flipCard(card2);
+          flippedCards = [];
+        }, 1000);
+      }
+    }
+  }
+}
+
+function flipCard(card: MemoryCard): void {
+  card.isFlipped = !card.isFlipped;
+  if (card.element) {
+    card.element.style.backgroundImage = card.isFlipped
+      ? `url(${card.image})`
+      : `url("/SVG/backgroundFlowers.svg")`;
+  }
+  if (card.isMatched) {
+    card.element!.style.backgroundImage = `url("/SVG/star.svg")`;
+  }
+}
 export function exportMemory() {
+  shuffleArray(memoryCards);
+  console.log(memoryCards);
+
   memoryCards.forEach((card) => {
     cardElement = document.createElement("div");
     cardElement.classList.add("memory-card");
@@ -93,60 +152,31 @@ export function exportMemory() {
     card.element = cardElement;
     memoryBoard.appendChild(cardElement);
   });
+}
 
-  function handleClickedCard(clickedCard: MemoryCard): void {
-    if (!clickedCard.isFlipped && flippedCards.length < 2) {
-      flipCard(clickedCard);
-      flippedCards.push(clickedCard);
-
-      if (flippedCards.length === 2) {
-        const [card1, card2] = flippedCards;
-
-        if (card1.id !== card2.id && card1.value === card2.value) {
-          matchedCount++;
-          console.log(matchedCount);
-
-          if (matchedCount === 6) {
-            setTimeout(() => {
-              memoryBoard.classList.add("hide");
-              const playAgain = document.querySelector("#playAgain");
-              playAgain?.classList.remove("hide");
-            }, 3000);
-          }
-          setTimeout(() => {
-            card1.isMatched = true;
-            card2.isMatched = true;
-            card1.element!.style.backgroundImage = `url("/SVG/star.svg")`;
-            card2.element!.style.backgroundImage = `url("/SVG/star.svg")`;
-            card1.element!.removeEventListener("click", () =>
-              handleClickedCard(card1)
-            );
-            card2.element!.removeEventListener("click", () =>
-              handleClickedCard(card2)
-            );
-
-            flippedCards = [];
-          }, 1000);
-        } else {
-          setTimeout(() => {
-            flipCard(card1);
-            flipCard(card2);
-            flippedCards = [];
-          }, 1000);
-        }
-      }
-    }
+// Funktion för att återställa spelet till startläget
+export function clearMemoryBoard() {
+  while (memoryBoard.firstChild) {
+    memoryBoard.removeChild(memoryBoard.firstChild);
   }
+}
 
-  function flipCard(card: MemoryCard): void {
-    card.isFlipped = !card.isFlipped;
+// Funktion för att återställa spelet till startläget
+function resetGame() {
+  memoryCards.forEach((card) => {
+    card.isFlipped = false;
+    card.isMatched = false;
     if (card.element) {
-      card.element.style.backgroundImage = card.isFlipped
-        ? `url(${card.image})`
-        : `url("/SVG/backgroundFlowers.svg")`;
+      card.element.style.backgroundImage = `url("/SVG/backgroundFlowers.svg")`;
+      card.element.addEventListener("click", () => handleClickedCard(card));
     }
-    if (card.isMatched) {
-      card.element!.style.backgroundImage = `url("/SVG/star.svg")`;
-    }
-  }
+  });
+  flippedCards = [];
+  matchedCount = 0;
+}
+
+// Funktion för att blanda om korten
+export function resetAndShuffleCards() {
+  resetGame();
+  shuffleArray(memoryCards);
 }

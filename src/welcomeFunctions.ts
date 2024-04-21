@@ -47,7 +47,7 @@ export function welcome() {
 }
 
 export function hideWelcomeAndAddSpeechBubble() {
-  return new Promise(function (resolve, reject) {
+  return new Promise(function (resolve) {
     setTimeout(() => {
       backgroundFlowersRound?.classList.remove("hide");
       welcomeEl?.classList.add("hide");
@@ -63,7 +63,7 @@ export function hideWelcomeAndAddSpeechBubble() {
 }
 
 function talkingText(element: HTMLElement, text: string) {
-  let textHej = "Do you want to learn about a common cold today?";
+  let textHej = "Do you want to learn about the common cold today?";
   let i = 0;
   const interval = setInterval(() => {
     if (i < textHej.length) {
@@ -76,7 +76,7 @@ function talkingText(element: HTMLElement, text: string) {
 }
 
 export function speechBubbleTimingandAddingBtn() {
-  let textHej = "Do you want to learn about a common cold today?";
+  let textHej = "Do you want to learn about the common cold today?";
   setTimeout(() => {
     talkingText(bubbleP!, textHej);
   }, 8000);
