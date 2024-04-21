@@ -15,14 +15,14 @@ const slideshowContainer = document.querySelector(".slideshow-container");
 bubbleBtn?.classList.add("hide");
 
 export function welcome() {
-  const width = 300; // Bredden på den liggande ovalen
-  const height = 50; // Höjden på den liggande ovalen
-  const centerX = width / 2; // X-koordinaten för ovalens centrum
-  const centerY = height / 2; // Y-koordinaten för ovalens centrum
+  const width = 300;
+  const height = 50;
+  const centerX = width / 2;
+  const centerY = height / 2;
   const totalChars = welcomeText.length;
-  const angleIncrement = Math.PI / totalChars; // Vinkeln mellan varje tecken
-  const horizontalRadius = width / 2; // Halva bredden av ovalen
-  const verticalRadius = height / 2; // Halva höjden av ovalen
+  const angleIncrement = Math.PI / totalChars;
+  const horizontalRadius = width / 2;
+  const verticalRadius = height / 2;
   const startAngle = angleIncrement / 2;
   const endAngle = startAngle + totalChars * angleIncrement;
 
@@ -30,9 +30,8 @@ export function welcome() {
     const angle = startAngle + angleIncrement * i;
     if (angle <= endAngle) {
       setTimeout(() => {
-        const x = centerX + horizontalRadius * 0.8 * Math.cos(angle); // X-koordinat för tecknet
-        const y = centerY + verticalRadius * Math.sin(angle); // Y-koordinat för tecknet
-
+        const x = centerX + horizontalRadius * 0.8 * Math.cos(angle);
+        const y = centerY + verticalRadius * Math.sin(angle);
         let span = document.createElement("span");
         span.innerHTML = welcomeText[i];
         span.style.right = `${x}px`;

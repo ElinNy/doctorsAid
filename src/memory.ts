@@ -94,8 +94,6 @@ function handleClickedCard(clickedCard: MemoryCard): void {
 
       if (card1.id !== card2.id && card1.value === card2.value) {
         matchedCount++;
-        console.log(matchedCount);
-        // let cardNodes: Node[] = [];
         if (matchedCount === 6) {
           setTimeout(() => {
             memoryBoard.classList.add("hide");
@@ -142,7 +140,6 @@ function flipCard(card: MemoryCard): void {
 }
 export function exportMemory() {
   shuffleArray(memoryCards);
-  console.log(memoryCards);
 
   memoryCards.forEach((card) => {
     cardElement = document.createElement("div");
@@ -154,14 +151,12 @@ export function exportMemory() {
   });
 }
 
-// Funktion för att återställa spelet till startläget
 export function clearMemoryBoard() {
   while (memoryBoard.firstChild) {
     memoryBoard.removeChild(memoryBoard.firstChild);
   }
 }
 
-// Funktion för att återställa spelet till startläget
 function resetGame() {
   memoryCards.forEach((card) => {
     card.isFlipped = false;
@@ -175,7 +170,6 @@ function resetGame() {
   matchedCount = 0;
 }
 
-// Funktion för att blanda om korten
 export function resetAndShuffleCards() {
   resetGame();
   shuffleArray(memoryCards);

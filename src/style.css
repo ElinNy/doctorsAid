@@ -23,15 +23,11 @@ body {
   padding: 30px 0px;
 }
 #bubbleBtn {
-  /* background-image: url("/SVG/pratbubbla.svg"); */
   position: relative;
   background-repeat: no-repeat;
   width: 10rem;
-  /* width: fit-content; */
-  /* height: fit-content; */
   height: 12rem;
   width: 12rem;
-  /* height: auto; */
   padding: 30px 0px;
   margin: 3rem auto 0px;
   text-align: center;
@@ -75,8 +71,6 @@ body {
 #bubbleP {
   color: rgba(0, 0, 0, 0.458);
   position: absolute;
-  /* top: 3rem; */
-  /* left: -0.3rem; */
   font-size: 20px;
   font-family: "Sniglet", system-ui;
   font-weight: 400;
@@ -85,13 +79,11 @@ body {
 #talkingId {
   position: absolute;
   left: 7rem;
-  /* top: 3rem; */
   background-image: url("/doktor_teeth.png");
   background-size: contain;
   height: 10rem;
   width: 15rem;
   background-repeat: no-repeat;
-  /* margin: auto; */
 }
 
 .talking {
@@ -171,12 +163,10 @@ span {
   }
 }
 
-/* Slideshow container */
 .slideshow-container {
   width: 80%;
   height: 35rem;
   position: relative;
-  /* margin: -5rem auto; */
   margin: 1rem auto;
   background-image: url("/SVG/backgroundFlowers.svg");
   background-size: cover;
@@ -184,7 +174,6 @@ span {
   border: 4px double rgba(0, 0, 0, 0.551);
 }
 
-/* Next & previous buttons */
 .prev {
   bottom: 18rem;
   margin: 0px 0px 0px 2rem;
@@ -197,7 +186,6 @@ span {
   border: none;
 }
 
-/* Position the "next button" to the right */
 .next {
   bottom: 18rem;
   margin: 0px 2rem 0px 0px;
@@ -208,7 +196,6 @@ span {
   background-image: url(/SVG/rigth.svg);
   background-repeat: no-repeat;
   border: none;
-  /* border-radius: 3px 0 0 3px; */
 }
 
 #slideText {
@@ -239,7 +226,6 @@ span {
   border: double 4px rgba(0, 0, 0, 0.458);
   width: 10rem;
   height: 10rem;
-  /* background-image: url("/doktor_teeth.png"); */
   border-radius: 100%;
   background-color: #7fffd4;
 }
@@ -276,7 +262,6 @@ span {
 .memory-card {
   width: 100px;
   height: 100px;
-  /* background-color: #588151b0; */
   background-color: rgba(127, 255, 212, 0.403);
   border: double 4px rgba(0, 0, 0, 0.458);
   display: flex;
@@ -333,7 +318,6 @@ span {
   font-weight: 400;
   border: double 4px rgba(0, 0, 0, 0.458);
   margin-top: 4px;
-
   animation: fadeIn 1s ease-in forwards;
 }
 
@@ -365,7 +349,6 @@ span {
   padding: 20px 0px;
   margin: auto;
   border: double 4px rgba(0, 0, 0, 0.458);
-  /* text-align: center; */
 }
 
 #goodJob {
@@ -374,7 +357,6 @@ span {
   font-size: 25px;
   font-family: "Sniglet", system-ui;
   font-weight: 600;
-  /* font-style: normal; */
   text-decoration: underline;
 }
 

@@ -51,7 +51,6 @@ const imgArray = [
 export function exportSlide() {
   showSlide(currentIndex);
   function showSlide(index: number) {
-    console.log(h1Array[index]);
     firstSlide!.textContent = textArray[index];
     firstSlideH1!.textContent = h1Array[index];
     firstSlideNumber!.textContent = `${currentIndex + 1}`;
